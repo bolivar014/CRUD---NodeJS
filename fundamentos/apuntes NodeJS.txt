@@ -58,7 +58,8 @@
 [*] Inspeccionador de Chrome
     chrome://inspect/#devices
 
-[*] 
+[*] instalar cowsay
+        npm i cowsay
 
 [*] 
 

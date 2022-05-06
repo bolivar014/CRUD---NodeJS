@@ -1,3 +1,6 @@
+// Importamos libreria cowsay
+const cowsay = require('cowsay');
+
 // Inicializamos variables
 let cont = 0;
 // Importamos modulo Requerido
@@ -19,4 +22,11 @@ frutas.forEach(item => {
 
     // Imprimimos constante dinero
     console.log(dinero);
-})
+});
+
+// Imprimimos mensaje
+console.log(cowsay.say({
+    text: "Hello World",
+    e: "oO",
+    T: "U "
+}));

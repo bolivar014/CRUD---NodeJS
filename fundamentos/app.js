@@ -1,32 +1,18 @@
-// Importamos libreria cowsay
-const cowsay = require('cowsay');
+// Requerir modulo http || todo lo necesario para crear un servidor...
+const http = require('http');
 
-// Inicializamos variables
-let cont = 0;
-// Importamos modulo Requerido
-const {frutas, dinero} = require('./frutas');
-
-// iteramos registros dentro del array frutas
-frutas.forEach(item => {
-    // Contador de iteracciones en el ciclo
-    cont += 1;
-
-    // Imprimimos en pantalla
-    console.log('el valor en posición : ' + cont + ', es: ' + item);
-
-    // Imprimimos
-    console.log('cantidad de registros repetidos...');
-    
-    // Imprimimos valores repetidos
-    console.count(item);
-
-    // Imprimimos constante dinero
-    console.log(dinero);
+// Callback peticiones al servidor
+const server = http.createServer((req, resp) => {
+    resp.end('Respondiendo a su solicitud...');
 });
 
-// Imprimimos mensaje
-console.log(cowsay.say({
-    text: "Hello World",
-    e: "oO",
-    T: "U "
-}));
+// Instanciamos puerto a utilizar
+const puerto = 3000;
+
+// Callback de escucha al puerto
+server.listen(puerto, () => {
+    console.log('escuchando solicitudes...');
+});
+
+// Imprimimos mensaje de escucha
+console.log('Escuchando solicitudes del servidor en el puerto 3000...');

@@ -1,0 +1,188 @@
+[*] Variables de ejecución externas al archivo local NodeJS.
+    NOMBREVAR1=VAL1 WEB=VAL2 node conceptos/entorno.js
+    EJM: NOMBRE=Pepito WEB=loquesea.com node conceptos/entorno.js
+    
+[*] NODEMON | HERRAMIENTA que detecta cada cambio realizado en el proyecto, de inmediato vuelte a compilar.
+    PM2 | HERRAMIENTA que permite el capturar todo tipo de error de ejecución a modo logs y restablece su uso.
+    
+    instalar: 
+        npm install -g nodemon // -g instruccion para instalar globalmente
+        npm install -g pm2
+
+    ejecutar nodemon: 
+        nodemon ruta/archivo.js
+    
+        ejemplo:
+            nodemon Conceptos/monohilos.js
+
+    ejecutar pm2:
+        pm2 start ruta/archivo.js 
+
+    Consultar STATUS pm2:
+        pm2 status
+    
+    Consultar logs
+        pm2 logs
+        
+    Pausar proceso pm2
+        pm2 stop
+
+[*] NODE-GYP | HERRAMIENTA que nos permite compilar librerias de C++
+    INSTALAR: 
+        npm i -g node-gyp
+
+    Configurar NODE-GYP:
+        node-gyp configure
+
+[*] Ejecutar modulos experimentales.
+    node --experimental-modules index.mjs
+
+[*] Crear package.json
+    npm init -y
+ 
+[*] Instalar paquete bcrypt | Libreria de cifrado
+    npm i bcrypt
+
+[*] Instalar paquete moment | Libreria de fechas
+    npm install moment
+
+[*] Instalar paquete sharp | Libreria que nos permite trabajar con imagenes en C++...
+    npm i sharp
+
+[*] función: pipe()
+    la función pipe se utiliza para mandar desde un sitio a otro
+    
+[*] Debugger NodeJS
+    node --inspect modulos/http.js
+
+[*] Inspeccionador de Chrome
+    chrome://inspect/#devices
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+

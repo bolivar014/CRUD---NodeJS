@@ -5,7 +5,8 @@ const express = require('express');
 const app = express();
 
 // Creamos variable constante del puerto a utilizar
-const port = 3000;
+// const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Importamos motor de plantillas - EJS
 app.set('view engine', 'ejs');

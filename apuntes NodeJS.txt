@@ -64,7 +64,9 @@
 [*] instalar EJS - EXPRESSJS
     npm i ejs
     
-[*] 
+[*] HEROKU
+    Es necesario tener instalado el CLI de heroku
+    
 
 [*] 
 

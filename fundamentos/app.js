@@ -1,6 +1,7 @@
 // Inicializamos variables
-const frutas = ['platano', 'manzana', 'pera', 'melocoton', 'platano'];
 let cont = 0;
+// Importamos modulo Requerido
+const {frutas, dinero} = require('./frutas');
 
 // iteramos registros dentro del array frutas
 frutas.forEach(item => {
@@ -15,4 +16,7 @@ frutas.forEach(item => {
     
     // Imprimimos valores repetidos
     console.count(item);
+
+    // Imprimimos constante dinero
+    console.log(dinero);
 })

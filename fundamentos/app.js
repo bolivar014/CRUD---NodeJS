@@ -1,18 +1,31 @@
-// Requerir modulo http || todo lo necesario para crear un servidor...
-const http = require('http');
+// Importamos libreria Express | Instalando la libreria
+const express = require('express');
 
-// Callback peticiones al servidor
-const server = http.createServer((req, resp) => {
-    resp.end('Respondiendo a su solicitud...');
+// Creamos constante "app" que utilizaría express
+const app = express();
+
+// Creamos variable constante del puerto a utilizar
+const port = 3000;
+
+// Middleware - Express Static - Carpeta public
+app.use(express.static(__dirname + '/public'));
+
+// Respondemos a la ruta desde el servidor...
+app.get('/', (req, resp) => {
+    resp.send('Hello world V2');
 });
 
-// Instanciamos puerto a utilizar
-const puerto = 3000;
-
-// Callback de escucha al puerto
-server.listen(puerto, () => {
-    console.log('escuchando solicitudes...');
+// Respondiendo a ruta "/servicios"
+app.get('/servicios', (req, resp) => {
+    resp.send('Esta en la vista de servicios...');
 });
 
-// Imprimimos mensaje de escucha
-console.log('Escuchando solicitudes del servidor en el puerto 3000...');
+// Configuración de ruta 404 - NOT FOUND
+app.use((req, resp, next) => {
+    resp.status(404).sendFile(__dirname + '/public/404.html');
+})
+
+// Hacemos escucha de puerto
+app.listen(port, () => {
+    console.log('servidor disponible en http://localhost:' + port);
+})

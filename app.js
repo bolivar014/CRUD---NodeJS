@@ -21,6 +21,9 @@ app.use(express.static(__dirname + '/public'));
 // Exportamos rutas | modularizada
 app.use('/', require('./router/RutasWeb'));
 
+// Exportamos rutas | Mascotas
+app.use('/mascotas', require('./router/Mascotas'));
+
 // Configuración de ruta 404 - NOT FOUND
 app.use((req, resp, next) => {
     resp.status(404).render("404", { titulo: "404", descripcion: "Contenido no disponible" });

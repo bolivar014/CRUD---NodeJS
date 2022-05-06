@@ -18,15 +18,8 @@ app.set('views', __dirname + '/views');
 // Middleware - Express Static - Carpeta public
 app.use(express.static(__dirname + '/public'));
 
-// Respondemos a la ruta desde el servidor...
-app.get('/', (req, resp) => {
-    resp.render("index", { titulo : 'Titulo Dinamico' });
-});
-
-// Respondiendo a ruta "/servicios"
-app.get('/servicios', (req, resp) => {
-    resp.render("servicios", { tituloServicios : "Mensaje dinamico de servicios..." });
-});
+// Exportamos rutas | modularizada
+app.use('/', require('./router/RutasWeb'));
 
 // Configuración de ruta 404 - NOT FOUND
 app.use((req, resp, next) => {

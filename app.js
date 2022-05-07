@@ -18,7 +18,7 @@ const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.
 
 // Creamos conexión a mongoDB
 mongoose.connect(uri, 
-    { useNewUrlParser: true, useUnifiedTopology: true }
+    { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 }
 ).then(() => console.log('Base de datos conectada correctamente.'))
 .catch(e => console.log(e));
 

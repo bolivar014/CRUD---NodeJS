@@ -31,5 +31,27 @@ router.get('/crear', (req, resp) => {
     resp.render('crear');
 });
 
+// Route para almacenar mascota
+router.post('/', async (req, resp) => {
+    // Recuperamos cuerpo del formulario enviado desde la vista crear mascota
+    const body = req.body;
+    // console.log(body);
+    try {
+        // Creamos instancia al modelo para crear nueva mascota
+        const mascotaDB = new Mascota(body);
+
+        // Creamos almacenamiento en la db.
+        await mascotaDB.save();
+
+        // console.log(mascotaDB);
+
+        // Redireccionamos
+        resp.redirect('/mascotas');
+    } catch (error) {
+        console.log('error - creación mascota');
+        console.log(error);
+    }
+});
+
 // Exportamos modulo "router"
 module.exports = router;

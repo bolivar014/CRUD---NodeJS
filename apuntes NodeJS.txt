@@ -72,7 +72,8 @@
 
         URL DOC: https://mongoosejs.com/
 
-[*] 
+[*] dotenv  | Archivo .ENV  - variables de entorno
+        npm install dotenv
 
 [*] 
 

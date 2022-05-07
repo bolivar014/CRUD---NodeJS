@@ -4,20 +4,17 @@ const express = require('express');
 // Creamos constante "app" que utilizaría express
 const app = express();
 
+// Archivo de configuración - Variables de entorno
+require('dotenv').config();
+
 // Creamos variable constante del puerto a utilizar
 const port = process.env.PORT || 3000;
 
 // Importamos Conexión a Base de Datos
 const mongoose = require('mongoose');
 
-// Creamos variables constantes de conexión al servidor
-const user = "userserver";
-const password = "eOfveK8LJmRs7uV2";
-const dbname = "veterinaria";
-
 // URL de conexión al servidor de mongoDB
-// const uri = `mongodb+srv://${user}:${password}@cluster0.kwgww.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-const uri = `mongodb+srv://${user}:${password}@cluster0.kwgww.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.kwgww.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 
 // Creamos conexión a mongoDB
 mongoose.connect(uri, 

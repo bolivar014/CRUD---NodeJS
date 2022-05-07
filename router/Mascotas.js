@@ -56,10 +56,11 @@ router.post('/', async (req, resp) => {
     }
 });
 
-// Route
+// Route para visualizar datos de ID
 router.get('/:id', async (req, resp) => {
     // Recolectamos el parametro recibido desde la URL
     const id = req.params.id;
+
     try {
         // Realizamos busqueda del id "Tener en cuenta que mongo los id los clasifica como ( _id )"
         const mascotaDB = await Mascota.findOne({ _id: id });
@@ -79,6 +80,33 @@ router.get('/:id', async (req, resp) => {
             mensaje: 'No se ha detectado el ID a buscar...'
         });
     }
+});
+
+router.delete('/:id', async (req, resp) => {
+    // Recolectamos el parametro recibido desde la URL
+    const id = req.params.id;
+
+    try {
+        // Realizamos busqueda del id "Tener en cuenta que mongo los id los clasifica como ( _id ) y después de encontrarlo, procede a eliminarlo"
+        const mascotaDB = await Mascota.findByIdAndDelete({ _id: id });
+
+        if(mascotaDB) {
+            // Cuando existe el registro y es eliminado
+            resp.json({
+                estado: true,
+                mensaje: 'Eliminado'
+            });
+        } else {
+            // Cuando no existe el registro
+            resp.json({
+                estado: false,
+                mensaje: 'Fallo al eliminar'
+            });
+        }
+    } catch (error) {
+
+    }
+
 });
 
 // Exportamos modulo "router"

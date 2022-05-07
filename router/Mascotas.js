@@ -72,9 +72,7 @@ router.get('/:id', async (req, resp) => {
             mascota: mascotaDB,
             error: false
         });
-    } catch (error) {
-        
-        //
+    } catch (error) {    
         resp.render('detalle', {
             error: true,
             mensaje: 'No se ha detectado el ID a buscar...'
@@ -82,6 +80,7 @@ router.get('/:id', async (req, resp) => {
     }
 });
 
+// Evento para eliminación de registros
 router.delete('/:id', async (req, resp) => {
     // Recolectamos el parametro recibido desde la URL
     const id = req.params.id;
@@ -106,7 +105,33 @@ router.delete('/:id', async (req, resp) => {
     } catch (error) {
 
     }
+});
 
+// Evento para actualización de registro 
+router.put('/:id', async (req, resp) => {
+    // Recolectamos el parametro recibido desde la URL
+    const id = req.params.id;
+    const body = req.body;
+
+    try {
+        // Evento para buscar y actualizar registro findByIdAndUpdate recibe 3 argumentos (id, cuerpo, { default })
+        const mascotaDB = await Mascota.findByIdAndUpdate( id, body, { useFindAndModify: false });
+
+        // Retornamos JSON
+        resp.json({
+            estado: true,
+            mensaje: 'editado'
+        })
+    } catch (error) {
+        // console.log('error de actualización');
+        // console.log(error);
+
+        // Retornamos JSON
+        resp.json({
+            estado: false,
+            mensaje: 'fallo'
+        })
+    }
 });
 
 // Exportamos modulo "router"

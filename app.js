@@ -13,13 +13,8 @@ const port = process.env.PORT || 3000;
 // Importamos Conexión a Base de Datos
 const mongoose = require('mongoose');
 
-USER="userserver";
-PASSWORD="eOfveK8LJmRs7uV2";
-DBNAME="veterinaria";
-
 // URL de conexión al servidor de mongoDB
-// const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.kwgww.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
-const uri = `mongodb+srv://${USER}:${PASSWORD}@cluster0.kwgww.mongodb.net/${DBNAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.kwgww.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 
 // Creamos conexión a mongoDB
 mongoose.connect(uri, 

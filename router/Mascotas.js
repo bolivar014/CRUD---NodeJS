@@ -38,12 +38,15 @@ router.post('/', async (req, resp) => {
     // console.log(body);
     try {
         // Creamos instancia al modelo para crear nueva mascota
-        const mascotaDB = new Mascota(body);
+        // const mascotaDB = new Mascota(body);
 
         // Creamos almacenamiento en la db.
-        await mascotaDB.save();
+        // await mascotaDB.save();
 
         // console.log(mascotaDB);
+
+        // Evento asincrono para creación de mascota - ejemplo 2
+        await Mascota.create(body);
 
         // Redireccionamos
         resp.redirect('/mascotas');

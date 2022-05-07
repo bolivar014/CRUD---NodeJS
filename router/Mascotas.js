@@ -26,5 +26,10 @@ router.get('/', async (req, resp) => {
     }    
 });
 
+// Route para crear mascota
+router.get('/crear', (req, resp) => {
+    resp.render('crear');
+});
+
 // Exportamos modulo "router"
 module.exports = router;

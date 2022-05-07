@@ -1,8 +1,17 @@
 // Importamos libreria Express | Instalando la libreria
 const express = require('express');
 
+// Importamos libreria bodyparser
+const bodyParser = require('body-parser');
+
 // Creamos constante "app" que utilizaría express
 const app = express();
+
+// Parsea a application/x-www-form-url-decoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// Parsea application/json
+app.use(bodyParser.json());
 
 // Archivo de configuración - Variables de entorno
 require('dotenv').config();

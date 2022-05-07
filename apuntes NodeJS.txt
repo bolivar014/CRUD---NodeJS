@@ -75,7 +75,8 @@
 [*] dotenv  | Archivo .ENV  - variables de entorno
         npm install dotenv
 
-[*] 
+[*] bodyParser | permite leer formularios enviados
+    npm install body-parser
 
 [*] 
 

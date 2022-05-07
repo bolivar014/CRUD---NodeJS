@@ -56,5 +56,30 @@ router.post('/', async (req, resp) => {
     }
 });
 
+// Route
+router.get('/:id', async (req, resp) => {
+    // Recolectamos el parametro recibido desde la URL
+    const id = req.params.id;
+    try {
+        // Realizamos busqueda del id "Tener en cuenta que mongo los id los clasifica como ( _id )"
+        const mascotaDB = await Mascota.findOne({ _id: id });
+
+        // console.log(mascotaDB);
+
+        //
+        resp.render('detalle', {
+            mascota: mascotaDB,
+            error: false
+        });
+    } catch (error) {
+        
+        //
+        resp.render('detalle', {
+            error: true,
+            mensaje: 'No se ha detectado el ID a buscar...'
+        });
+    }
+});
+
 // Exportamos modulo "router"
 module.exports = router;

@@ -5,8 +5,25 @@ const express = require('express');
 const app = express();
 
 // Creamos variable constante del puerto a utilizar
-// const port = 3000;
 const port = process.env.PORT || 3000;
+
+// Importamos Conexión a Base de Datos
+const mongoose = require('mongoose');
+
+// Creamos variables constantes de conexión al servidor
+const user = "userserver";
+const password = "eOfveK8LJmRs7uV2";
+const dbname = "veterinaria";
+
+// URL de conexión al servidor de mongoDB
+// const uri = `mongodb+srv://${user}:${password}@cluster0.kwgww.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${user}:${password}@cluster0.kwgww.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+
+// Creamos conexión a mongoDB
+mongoose.connect(uri, 
+    { useNewUrlParser: true, useUnifiedTopology: true }
+).then(() => console.log('Base de datos conectada correctamente.'))
+.catch(e => console.log(e));
 
 // Importamos motor de plantillas - EJS
 app.set('view engine', 'ejs');

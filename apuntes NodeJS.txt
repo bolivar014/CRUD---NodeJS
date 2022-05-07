@@ -67,8 +67,10 @@
 [*] HEROKU
     Es necesario tener instalado el CLI de heroku
     
+[*] mongoose | libreria de conexión a base de datos MongoDB
+    INSTALADOR: npm install mongoose
 
-[*] 
+        URL DOC: https://mongoosejs.com/
 
 [*] 
 
